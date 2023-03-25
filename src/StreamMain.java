@@ -34,7 +34,6 @@ public class StreamMain {
         System.out.println("-------学生ID順の昇順、点数の降順に並び替えて表示-------");
         scoreList.stream().sorted(Comparator.comparing(TestScore::studentId).reversed()
                         .thenComparing(TestScore::score).reversed())
-                .toList()
                 .forEach(testScore -> System.out.println("id：" + testScore.studentId()
                         + " subject：" + testScore.subject() + " score：" + testScore.score()));
     }

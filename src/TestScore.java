@@ -26,7 +26,7 @@ public record TestScore(String studentId, String subject, int score) {
         this.studentId = studentId;
         this.subject = subject;
         this.score = score;
-        if (score > 100) {
+        if (!isValidScore()) {
 
             // 100を超える点数は入力を許可しない
             throw new IllegalArgumentException("点数は100点以内で入力してください");
